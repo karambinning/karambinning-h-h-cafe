@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>H&amp;H Café — Eaton Green Road, Luton. Open 6:30am.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="H&amp;H Café, 12 Eaton Green Road, Luton LU2 9HB. Big breakfasts, baguettes, builder's tea. Open from 6:30am. Food hygiene rating: Good (Feb 2026).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4EEE2;
+  --cream-warm:#EEE5D2;
+  --maroon:#5C1A1B;
+  --butter:#E8B845;
+  --ink:#1A1614;
+  --ember:#C66B3D;
+  --rule:#1A16141a;
+  --display:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --rhythm:clamp(1rem,.7rem + .6vw,1.18rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--serif);font-size:var(--rhythm);line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;
+  background-image:
+    radial-gradient(rgba(26,22,20,.035) 1px,transparent 1px),
+    radial-gradient(rgba(26,22,20,.025) 1px,transparent 1px);
+  background-size:3px 3px,7px 7px;background-position:0 0,1px 1px;
+  mix-blend-mode:multiply;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration-thickness:.08em;text-underline-offset:.18em}
+a:hover{text-decoration-style:wavy}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:900;line-height:.86;letter-spacing:-.01em;text-wrap:balance}
+p{text-wrap:pretty;hyphens:auto;margin:0 0 1em}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+
+/* ─── top bar ──────────────────────────────────────────── */
+.top{
+  position:sticky;top:0;z-index:50;background:var(--cream);
+  border-bottom:1px solid var(--rule);
+}
+.top__row{display:flex;align-items:center;gap:1rem;padding:.85rem 0;font-family:var(--display);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.92rem}
+.top__mark{font-size:1.15rem;letter-spacing:.02em}
+.top__nav{display:flex;gap:1.4rem;margin-left:auto}
+.top__nav a{text-decoration:none;border-bottom:2px solid transparent;padding:.2em 0;transition:border-color .2s}
+.top__nav a:hover{border-bottom-color:var(--maroon)}
+.pill{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--maroon);color:var(--cream);padding:.35rem .7rem;
+  font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.07em;
+}
+.pill__dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--butter);box-shadow:0 0 0 0 var(--butter);animation:blink 1.6s ease-in-out infinite}
+.pill[data-state="closed"]{background:var(--ink);color:var(--cream-warm)}
+.pill[data-state="closed"] .pill__dot{background:#888;animation:none;box-shadow:none}
+@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(232,184,69,.7)}50%{box-shadow:0 0 0 .35rem rgba(232,184,69,0)}}
+
+/* ─── hero masthead ─────────────────────────────────────── */
+.hero{padding:clamp(2.4rem,6vw,5rem) 0 clamp(1.6rem,4vw,3rem)}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:1.4rem}
+@media (min-width:880px){.hero__grid{grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:end}}
+.hero__title{
+  font-size:clamp(3.6rem,15vw,11.5rem);
+  letter-spacing:-.035em;line-height:.78;
+  color:var(--ink);
+}
+.hero__title em{font-style:normal;color:var(--maroon)}
+.hero__title .amp{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ember);padding:0 .04em}
+.hero__sub{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  letter-spacing:.04em;font-size:clamp(.95rem,1.2vw + .7rem,1.25rem);
+  border-top:2px solid var(--ink);padding-top:.9rem;color:var(--ink);
+}
+.hero__sub strong{font-weight:900}
+.hero__lede{font-size:clamp(1.05rem,.6vw + .9rem,1.32rem);max-width:34ch;margin-top:1.1rem;color:#3a2e26}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.3rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  font-size:.95rem;padding:.85rem 1.2rem;
+  text-decoration:none;border:2px solid var(--ink);
+  background:var(--ink);color:var(--cream);transition:transform .15s,background .15s,color .15s;
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--maroon)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--butter);box-shadow:4px 4px 0 var(--ink)}
+
+/* ─── marquee strip ─────────────────────────────────────── */
+.marquee{
+  background:var(--maroon);color:var(--butter);
+  border-block:3px solid var(--ink);
+  overflow:hidden;
+  padding:.9rem 0;
+}
+.marquee__track{
+  display:inline-flex;gap:3.2rem;white-space:nowrap;
+  font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(1.4rem,3.4vw,2.4rem);letter-spacing:.02em;
+  animation:scroll 38s linear infinite;
+  padding-left:3.2rem;
+}
+.marquee__track span{display:inline-flex;align-items:center;gap:3.2rem}
+.marquee__track span::after{content:"●";color:var(--butter);opacity:.6;font-size:.7em}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+
+/* ─── section frame ─────────────────────────────────────── */
+section{padding:clamp(3rem,7vw,6rem) 0}
+.section__kicker{
+  font-family:var(--display);font-weight:700;font-size:.88rem;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--maroon);
+  margin-bottom:1.4rem;display:flex;align-items:center;gap:.8rem;
+}
+.section__kicker::before{content:"";width:2.2rem;height:2px;background:var(--maroon)}
+.section__h2{font-size:clamp(2.4rem,5.4vw,4.6rem);margin-bottom:1.4rem;letter-spacing:-.02em}
+
+/* ─── slab variants ─────────────────────────────────────── */
+.slab--cream{background:var(--cream)}
+.slab--maroon{background:var(--maroon);color:var(--cream)}
+.slab--maroon .section__kicker{color:var(--butter)}
+.slab--maroon .section__kicker::before{background:var(--butter)}
+.slab--yellow{background:var(--butter);color:var(--ink)}
+.slab--yellow .section__kicker{color:var(--maroon)}
+.slab--yellow .section__kicker::before{background:var(--maroon)}
+
+/* ─── about ─────────────────────────────────────────────── */
+.about__grid{display:grid;gap:2.4rem;grid-template-columns:1fr}
+@media (min-width:780px){.about__grid{grid-template-columns:.85fr 1.15fr;align-items:start}}
+.about__lede{font-size:clamp(1.4rem,1.4vw + 1rem,1.85rem);font-weight:600;line-height:1.25;color:var(--ink)}
+.about__body p{font-size:1.05rem;color:#332924}
+.facts{
+  display:grid;gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:2rem;
+  grid-template-columns:repeat(2,1fr);
+}
+@media(min-width:780px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact{background:var(--cream);padding:1.1rem 1.2rem}
+.fact__num{font-family:var(--display);font-weight:900;font-size:2rem;color:var(--maroon);line-height:1}
+.fact__lbl{font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#5a4a3f;margin-top:.4rem}
+
+/* ─── menu ──────────────────────────────────────────────── */
+.menu__grid{display:grid;gap:2.6rem 3.2rem;grid-template-columns:1fr}
+@media (min-width:780px){.menu__grid{grid-template-columns:repeat(2,1fr)}}
+.menu__group h3{
+  font-family:var(--display);font-weight:800;
+  font-size:1.55rem;letter-spacing:.06em;text-transform:uppercase;
+  border-bottom:2px solid currentColor;padding-bottom:.5rem;margin-bottom:1rem;
+}
+.menu__row{
+  display:grid;grid-template-columns:1fr auto;align-items:baseline;
+  gap:.6rem;padding:.55rem 0;
+  font-family:var(--serif);
+  border-bottom:1px dotted currentColor;
+}
+.menu__row:last-child{border-bottom:none}
+.menu__row .name{font-weight:600;font-size:1.06rem}
+.menu__row .desc{display:block;font-weight:400;font-size:.92rem;opacity:.78;margin-top:.1rem;letter-spacing:.005em}
+.menu__row .price{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;font-size:1.1rem;letter-spacing:.02em;white-space:nowrap}
+.menu__note{margin-top:2rem;font-size:.95rem;font-style:italic;opacity:.85}
+
+@supports (animation-timeline:view()){
+  .reveal{animation:rise both;animation-timeline:view();animation-range:entry 0% cover 22%}
+  @keyframes rise{from{opacity:0;transform:translateY(1.4rem)}to{opacity:1;transform:translateY(0)}}
+}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none!important}}
+
+/* ─── voices (reviews) ──────────────────────────────────── */
+.voices{display:grid;gap:1.4rem;grid-template-columns:1fr}
+@media (min-width:780px){.voices{grid-template-columns:repeat(3,1fr)}}
+.voice{
+  background:var(--cream);color:var(--ink);padding:1.6rem 1.4rem 1.4rem;
+  border:1px solid var(--ink);position:relative;
+}
+.voice::before{content:"“";position:absolute;top:-.4rem;left:.6rem;font-family:var(--serif);font-style:italic;font-weight:700;font-size:5rem;line-height:1;color:var(--ember)}
+.voice q{quotes:none;display:block;font-style:italic;font-size:1.1rem;line-height:1.4;margin-bottom:1rem}
+.voice cite{font-family:var(--display);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--maroon)}
+
+/* ─── find us ───────────────────────────────────────────── */
+.find__grid{display:grid;gap:2.4rem;grid-template-columns:1fr}
+@media (min-width:780px){.find__grid{grid-template-columns:1.1fr .9fr}}
+.find__address{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.4rem);
+  line-height:1.05;letter-spacing:.01em;
+}
+.find__address span{display:block}
+.find__hours{margin-top:2rem}
+.hours{font-family:var(--serif);width:100%;border-collapse:collapse;font-size:1.05rem}
+.hours td{padding:.55rem 0;border-bottom:1px dotted currentColor}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--display);font-weight:700}
+.hours tr.today td{color:var(--butter);font-weight:700}
+.slab--cream .hours tr.today td{color:var(--maroon)}
+
+/* ─── footer ────────────────────────────────────────────── */
+footer{background:var(--ink);color:var(--cream);padding:clamp(2.6rem,5vw,4rem) 0 1.4rem}
+.foot__grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:780px){.foot__grid{grid-template-columns:1.6fr .9fr .8fr}}
+.foot__brand{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,5vw,3.4rem);letter-spacing:-.02em;line-height:.9}
+.foot__brand small{display:block;font-weight:500;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--butter);margin-top:.6rem}
+.foot__letter{font-size:1.02rem;line-height:1.55}
+.foot__letter a{color:var(--butter);text-decoration:none;border-bottom:1px solid var(--butter)}
+.foot__list{list-style:none;padding:0;margin:0;font-size:.95rem;line-height:1.9}
+.foot__list strong{display:block;font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--butter);margin-bottom:.4rem}
+.foot__bottom{
+  margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid #ffffff20;
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  font-family:var(--display);font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;color:#cdbfa5;
+}
+.fsa{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:#0b6b3a;color:#fff;padding:.5rem .8rem;
+  font-family:var(--display);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.fsa__rate{background:#fff;color:#0b6b3a;padding:.15rem .5rem;font-weight:900}
+
+/* sticky open pill on mobile */
+@media (max-width:640px){
+  .top__nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__row">
+    <span class="top__mark">H&amp;H Café</span>
+    <span class="pill" id="status" data-state="open">
+      <span class="pill__dot"></span>
+      <span id="status-text">Open · serving</span>
+    </span>
+    <nav class="top__nav">
+      <a href="#menu">Menu</a>
+      <a href="#voices">Reviews</a>
+      <a href="#find">Find us</a>
+      <a href="tel:+441582729768">01582 729768</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="hero__grid">
+    <div>
+      <h1 class="hero__title">
+        H<span class="amp">&amp;</span>H<br>
+        <em>Café.</em>
+      </h1>
+    </div>
+    <div>
+      <div class="hero__sub">Eaton Green Road, Luton · <strong>Breakfast on at 6:30.</strong></div>
+      <p class="hero__lede">A neighbourhood breakfast counter doing the proper job — big plates, builder's tea, baguettes wrapped to take to the site. Over 650 reviews and a Food Hygiene rating of <strong>Good</strong>.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#menu">See the menu</a>
+        <a class="btn btn--ghost" href="tel:+441582729768">Call the café</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Big Breakfast</span>
+    <span>Bacon Baguette</span>
+    <span>Turkish Breakfast</span>
+    <span>Veggie Plate</span>
+    <span>Bangers &amp; Mash</span>
+    <span>Cheese Omelette</span>
+    <span>Pot of Tea</span>
+    <span>Soup of the Day</span>
+    <span>Big Breakfast</span>
+    <span>Bacon Baguette</span>
+    <span>Turkish Breakfast</span>
+    <span>Veggie Plate</span>
+    <span>Bangers &amp; Mash</span>
+    <span>Cheese Omelette</span>
+    <span>Pot of Tea</span>
+    <span>Soup of the Day</span>
+  </div>
+</div>
+
+<section class="slab--cream" id="about">
+  <div class="wrap">
+    <div class="section__kicker">The Counter</div>
+    <div class="about__grid">
+      <div>
+        <h2 class="section__h2 about__lede">A café for the early shift, the school run, and Sunday after a lie-in.</h2>
+      </div>
+      <div class="about__body">
+        <p>The kitchen is on from half-six. Eggs land on the griddle, the tea is brewed in a real pot, and the baguettes are buttered the moment they're ordered. Nothing on the menu is trying to be clever — it's the breakfast Luton actually wants.</p>
+        <p>Hot plates for those sitting in. Tin-foil wraps for those heading to a job. Same kitchen, same prices, same first-name nod from behind the till.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="fact__num">6:30</div><div class="fact__lbl">Doors open</div></div>
+      <div class="fact"><div class="fact__num">650+</div><div class="fact__lbl">Online reviews</div></div>
+      <div class="fact"><div class="fact__num">4.6★</div><div class="fact__lbl">Average rating</div></div>
+      <div class="fact"><div class="fact__num">£4.50</div><div class="fact__lbl">Bacon baguette</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slab--maroon" id="menu">
+  <div class="wrap">
+    <div class="section__kicker">The Menu</div>
+    <h2 class="section__h2">Plates, baps &amp; the proper fry-up.</h2>
+    <div class="menu__grid">
+
+      <div class="menu__group reveal">
+        <h3>Breakfasts</h3>
+        <div class="menu__row"><span class="name">Big Breakfast<span class="desc">Two of everything — eggs, sausage, bacon, beans, hash, mushrooms, toast.</span></span><span class="price">£15.00</span></div>
+        <div class="menu__row"><span class="name">Special Breakfast<span class="desc">The full set, generously plated.</span></span><span class="price">£13.00</span></div>
+        <div class="menu__row"><span class="name">Sunny Side Up<span class="desc">Eggs how you'd cook them at home.</span></span><span class="price">£12.70</span></div>
+        <div class="menu__row"><span class="name">Early Rise<span class="desc">For the half-six crowd.</span></span><span class="price">£12.70</span></div>
+        <div class="menu__row"><span class="name">Rise &amp; Shine</span><span class="price">£12.70</span></div>
+        <div class="menu__row"><span class="name">Veggie Breakfast<span class="desc">No meat. Same plate size.</span></span><span class="price">£12.60</span></div>
+        <div class="menu__row"><span class="name">Turkish Breakfast<span class="desc">Eggs, cheese, olives, tomatoes, cucumber, bread.</span></span><span class="price">£11.70</span></div>
+        <div class="menu__row"><span class="name">All-Day Breakfast</span><span class="price">£11.50</span></div>
+        <div class="menu__row"><span class="name">Light Breakfast<span class="desc">For when the Big is a bit much.</span></span><span class="price">£8.75</span></div>
+      </div>
+
+      <div class="menu__group reveal">
+        <h3>Baguettes &amp; Baps</h3>
+        <div class="menu__row"><span class="name">Bacon Baguette<span class="desc">Crusty, buttered, packed.</span></span><span class="price">£4.50</span></div>
+        <div class="menu__row"><span class="name">Sausage Baguette</span><span class="price">£4.50</span></div>
+        <div class="menu__row"><span class="name">Cheese Omelette</span><span class="price">£11.00</span></div>
+        <div class="menu__row"><span class="name">Soup of the Day<span class="desc">Ask at the till.</span></span><span class="price">£5.85</span></div>
+        <div class="menu__row"><span class="name">Fried Cod<span class="desc">Battered, chipped, dressed.</span></span><span class="price">£11.70</span></div>
+      </div>
+
+      <div class="menu__group reveal">
+        <h3>Add a Side</h3>
+        <div class="menu__row"><span class="name">Hash Browns</span><span class="price">£2.60</span></div>
+        <div class="menu__row"><span class="name">Egg</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Sausage</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Beef Sausage</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Bacon (one slice)</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Halal Turkey Bacon</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Black Pudding</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Tomatoes</span><span class="price">£1.65</span></div>
+        <div class="menu__row"><span class="name">Toast</span><span class="price">£0.90</span></div>
+        <div class="menu__row"><span class="name">Bread &amp; Butter</span><span class="price">£0.75</span></div>
+      </div>
+
+      <div class="menu__group reveal">
+        <h3>Also Served</h3>
+        <div class="menu__row"><span class="name">Roast Dishes<span class="desc">From the hot counter — ask what's on.</span></span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Pies<span class="desc">Steak, chicken, mash on the side.</span></span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Burgers</span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Jacket Potatoes</span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Pasta &amp; Salads</span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Kids' Meals</span><span class="price">—</span></div>
+        <div class="menu__row"><span class="name">Smoothies &amp; Hot Drinks</span><span class="price">—</span></div>
+      </div>
+
+    </div>
+    <p class="menu__note">Prices accurate as of May 2026 — see the board in the café for today's specials and any seasonal changes.</p>
+  </div>
+</section>
+
+<section class="slab--cream" id="voices">
+  <div class="wrap">
+    <div class="section__kicker">What people say</div>
+    <h2 class="section__h2">Big plates. Fair prices. Friendly counter.</h2>
+    <div class="voices">
+      <figure class="voice reveal">
+        <q>Consistently friendly and efficient service — you don't get rushed and you don't get ignored.</q>
+        <cite>Aggregated from 660+ online reviews</cite>
+      </figure>
+      <figure class="voice reveal">
+        <q>Generous portion sizes for the money. The Big Breakfast genuinely is big.</q>
+        <cite>Common theme across review sites</cite>
+      </figure>
+      <figure class="voice reveal">
+        <q>Quality food at reasonable prices — a proper Luton caff.</q>
+        <cite>Recurring sentiment, public reviews</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slab--yellow" id="find">
+  <div class="wrap">
+    <div class="section__kicker">Find us</div>
+    <h2 class="section__h2">Corner of Eaton Green Road.</h2>
+    <div class="find__grid">
+      <div>
+        <address class="find__address" style="font-style:normal">
+          <span>H&amp;H Café</span>
+          <span>12 Eaton Green Road</span>
+          <span>Luton, Bedfordshire</span>
+          <span>LU2 9HB</span>
+        </address>
+        <div class="hero__cta" style="margin-top:1.8rem">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=12+Eaton+Green+Road+Luton+LU2+9HB" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn--ghost" href="tel:+441582729768">01582 729768</a>
+        </div>
+      </div>
+      <div class="find__hours">
+        <strong style="font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:.84rem;color:var(--maroon);display:block;margin-bottom:.7rem">Opening hours</strong>
+        <table class="hours" id="hours-table">
+          <tr data-day="1"><td>Monday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="2"><td>Tuesday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="3"><td>Wednesday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="4"><td>Thursday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="5"><td>Friday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="6"><td>Saturday</td><td>6:30 — 17:00</td></tr>
+          <tr data-day="0"><td>Sunday</td><td>8:00 — 16:00</td></tr>
+        </table>
+        <p style="margin-top:1.2rem;font-size:.95rem;font-style:italic;color:#5a3b1f">Delivery via Uber Eats during posted hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot__grid">
+    <div>
+      <div class="foot__brand">H&amp;H Café<small>Eaton Green Road · Luton · LU2 9HB</small></div>
+    </div>
+    <div class="foot__letter">
+      <p>The café is at the bottom of Eaton Green Road — corner shop frontage, hand-painted board, lights on from before the bus stops fill.</p>
+      <p>Call <a href="tel:+441582729768">01582 729768</a> to ask about today's specials, large orders for site crews, or anything off the printed menu.</p>
+    </div>
+    <ul class="foot__list">
+      <li><strong>Counter</strong>Mon–Sat · 6:30am – 5pm</li>
+      <li>Sunday · 8am – 4pm</li>
+      <li><strong>Delivery</strong>Uber Eats</li>
+      <li><strong>Hygiene</strong><span class="fsa"><span class="fsa__rate">5</span>FSA — Good</span></li>
+    </ul>
+  </div>
+  <div class="wrap foot__bottom">
+    <span>© H&amp;H Café · Luton</span>
+    <span>Site built by Binning.AI · Karambinning</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function updateStatus(){
+    var now = new Date();
+    var day = now.getDay();        // 0 Sun … 6 Sat
+    var mins = now.getHours()*60 + now.getMinutes();
+    var open = (day === 0) ? 8*60 : 6*60+30;
+    var close = (day === 0) ? 16*60 : 17*60;
+    var el = document.getElementById('status');
+    var txt = document.getElementById('status-text');
+    if(mins >= open && mins < close){
+      el.setAttribute('data-state','open');
+      txt.textContent = 'Open · serving';
+    } else {
+      el.setAttribute('data-state','closed');
+      var nextOpen;
+      if(mins < open){
+        nextOpen = (day === 0) ? '8:00' : '6:30';
+        txt.textContent = 'Closed · opens ' + nextOpen;
+      } else {
+        var tomorrow = (day + 1) % 7;
+        nextOpen = (tomorrow === 0) ? '8:00 Sun' : '6:30';
+        txt.textContent = 'Closed · opens ' + nextOpen;
+      }
+    }
+    // highlight today's row
+    var rows = document.querySelectorAll('#hours-table tr');
+    rows.forEach(function(r){
+      r.classList.toggle('today', Number(r.dataset.day) === day);
+    });
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+})();
+</script>
+
+</body>
+</html>
